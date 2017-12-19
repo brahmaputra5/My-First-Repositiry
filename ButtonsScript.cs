@@ -36,6 +36,7 @@ public class ButtonsScript : MonoBehaviour
         UnityAdsPanel.SetActive(false);
     }
 
+    //Fuck You
     public void HandleButtonPadlockPressed(GameObject go)
     {
         Debug.Log(go);
