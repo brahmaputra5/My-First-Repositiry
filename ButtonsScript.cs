@@ -7,7 +7,13 @@ public class ButtonsScript : MonoBehaviour
 {
     private GameObject _localLockGO;
     public GameObject UnityAdsPanel;
+    public GameObject RatePanel;
     public GameObject[] Panels;
+
+    void Awake()
+    {
+        RatePanel.SetActive(true);
+    }
     void Start()
     {
         ChoosePanel(0);
@@ -63,6 +69,14 @@ public class ButtonsScript : MonoBehaviour
     {
         Application.OpenURL(Adv);
     }
+
+    public void RateAnswer(bool answer)
+    {
+        if(answer == true)
+            RateGame();
+        RatePanel.SetActive(false);
+    }
+
 
     public void RateGame()
     {
