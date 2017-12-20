@@ -62,7 +62,6 @@ public class ButtonsScript : MonoBehaviour
     public void AppAds(string Adv)
     {
         Application.OpenURL(Adv);
-        Application.OpenURL("https://itunes.apple.com/app/id" + GetComponent(ADSComponent.Instance.AppleId) + "?action=write-review");
     }
 
     public void RateGame()
