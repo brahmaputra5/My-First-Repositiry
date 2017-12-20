@@ -36,7 +36,6 @@ public class ButtonsScript : MonoBehaviour
         UnityAdsPanel.SetActive(false);
     }
 
-    //Fuck You
     public void HandleButtonPadlockPressed(GameObject go)
     {
         Debug.Log(go);
@@ -63,10 +62,15 @@ public class ButtonsScript : MonoBehaviour
     public void AppAds(string Adv)
     {
         Application.OpenURL(Adv);
+        Application.OpenURL("https://itunes.apple.com/app/id" + GetComponent(ADSComponent.Instance.AppleId) + "?action=write-review");
     }
 
-    public void moreGames(string Link)
+    public void RateGame()
     {
-		Application.OpenURL(Link);
+        #if UNITY_ANDROID
+		Application.OpenURL("https://play.google.com/store/apps/details?id=" + Application.identifier);
+        #elif UNITY_IOS
+        Application.OpenURL("https://itunes.apple.com/app/id" + GetComponent(ADSComponent.Instance.AppleId) + "?action=write-review");
+        #endif
     }
 }
